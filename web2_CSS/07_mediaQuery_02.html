@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My favorite websites</title>
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            border-bottom: 1px gray solid;
+            margin: 0px;
+            padding: 20px;
+        }
+        body {
+            margin: 0px;
+        }
+        #grid ul {
+            border-right: 1px gray solid;
+            width: 100px;
+            margin: 0px;
+            margin-left: 10px;
+            padding: 20px;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+        }
+        #content {
+            padding: 0px 30px;
+        }
+        @media(max-width: 600px) {
+            #grid {
+                display: block;
+            }
+            #grid ul {
+                border-right: none;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>My favorite websites</h1>
+    <div id="grid">
+        <ul>
+            <li><a href="https://google.com" target="_blank">Google</a></li>
+            <li><a href="https://youtube.com" target="_blank">YouTube</a></li>
+            <li><a href="https://naver.com" target="_blank">Naver</a></li>
+            <li><a href="https://github.com" target="_blank">Github</a></li>
+            <li><a href="https://chatgpt.com" target="_blank">ChatGPT</a></li>
+        </ul>
+        <div id="content">
+            <h2>Google</h2>
+            <p>Google LLC is an American multinational corporation and technology company focusing on online advertising, search engine technology, cloud computing, computer software, quantum computing, e-commerce, consumer electronics, and artificial intelligence (AI). It has been referred to as "the most powerful company in the world" by the BBC and is one of the world's most valuable brands due to its market dominance, data collection, and technological advantages in the field of AI. Alongside Amazon, Apple, Meta, and Microsoft, Google's parent company, Alphabet Inc. is one of the five Big Tech companies.</p>
+        </div>
+    </div>
+</body>
+</html>
