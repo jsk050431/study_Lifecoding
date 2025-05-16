@@ -11,9 +11,12 @@
             padding-bottom: 25px;
             padding-top: 10px;
         }
-        a {
-            color: gray;
-            text-decoration: none;
+        h4 {
+            margin: 40px 0px 10px 0px;
+        }
+        #link {
+            margin: 0;
+            padding-left: 20px;
         }
         img {
             display: block;
@@ -43,25 +46,37 @@
             <ul>
                 <li>나이: 2X살</li>
                 <li>학교: 00대학교</li>
-                <li><a href="https://github.com/jsk050431" target="_blank">깃허브 주소 바로가기</a></li>
             </ul>
         </div>
         <div id="introduction">
             <h2>JSK</h2>
             <p>단순히 따라 하기보다, 스스로 생각하고 만들어가는 개발자가 되고 싶습니다.
                 직접 계획하고 실습하며, 조금씩 나만의 것을 쌓아가고 있습니다.</p>
+                <h4>Link</h4>
+                <ul id="link">
+                    <li><a href="https://github.com/jsk050431" target="_blank">Github</a></li>
+                    <li><a href="https://velog.io/@jsk050431/posts" target="_blank">Velog</a></li>
+                    <li><a href="https://solved.ac/profile/jsk04300" target="_blank">solved.ac</a></li>
+                </ul>
         </div>
     </div>
     <input type="button" value="Night" onclick="
         let target = document.querySelector('body')
+        let a_list = document.querySelectorAll('a');
         if(this.value === 'Night') {
             target.style.backgroundColor = 'black';
             target.style.color = 'white';
             this.value = 'Day';
+            a_list.forEach(link => {
+                link.style.color = 'skyblue'
+            });
         } else {
             target.style.backgroundColor = 'white';
             target.style.color = 'black';
             this.value = 'Night';
+            a_list.forEach(link => {
+                link.style.color = 'blue'
+            });
         }
         ">
 </body>

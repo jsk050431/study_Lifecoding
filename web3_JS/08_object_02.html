@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 프로필</title>
+    <style>
+        h1 {
+            text-align: center;
+            margin: 0;
+            border-bottom: 1px gray solid;
+            padding-bottom: 25px;
+            padding-top: 10px;
+        }
+        h4 {
+            margin: 40px 0px 10px 0px;
+        }
+        a {
+            color: blue;
+        }
+        #link {
+            margin: 0;
+            padding-left: 20px;
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: 210px 1fr;
+        }
+        #information {
+            border-right: 1px gray solid;
+            margin: 0;
+            padding-top: 20px;
+        }
+        #introduction {
+            padding-left: 20px;
+        }
+    </style>
+    <script>
+        let body = {
+            setColor : function(color) {
+                document.querySelector("body").style.color = color;
+            },
+            setBackgroundColor : function(color) {
+                document.querySelector("body").style.backgroundColor = color;
+            }
+        }
+        let link = {
+            setColor : function(color) {
+                document.querySelectorAll("a").forEach(link => {
+                    link.style.color = color
+                })
+            }
+        }
+        function nightDayHandler(self) {
+            if(self.value === "Night") {
+                body.setColor("white");
+                body.setBackgroundColor("black");
+                self.value = "Day";
+                link.setColor("skyblue")
+            } else {
+                body.setColor("black");
+                body.setBackgroundColor("white");
+                self.value = "Night";
+                link.setColor("blue")
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>My profile</h1>
+    <div id="grid">
+        <div id="information">
+            <img src="image.jpg" width="150px">
+            <ul>
+                <li>이름: jsk</li>
+                <li>나이: 2X살</li>
+                <li>학교: 00대학교</li>
+            </ul>
+        </div>
+        <div id="introduction">
+            <h2>Introduction</h2>
+            <p>단순히 따라 하기보다, 스스로 생각하고 만들어가는 개발자가 되고 싶습니다.
+                직접 계획하고 실습하며, 조금씩 나만의 것을 쌓아가고 있습니다.</p>
+                <h4>Link</h4>
+                <ul id="link">
+                    <li><a href="https://github.com/jsk050431" target="_blank">Github</a></li>
+                    <li><a href="https://velog.io/@jsk050431/posts" target="_blank">Velog</a></li>
+                    <li><a href="https://solved.ac/profile/jsk04300" target="_blank">solved.ac</a></li>
+                </ul>
+        </div>
+    </div>
+    <input type="button" value="Night" onclick="
+        nightDayHandler(this)
+        ">
+</body>
+</html>
