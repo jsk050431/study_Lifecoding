@@ -2,9 +2,11 @@ a {
     color: blue;
     text-decoration: none;
 }
+
 #home {
     color: gray;
 }
+
 h1 {
     font-size: 40px;
     text-align: center;
@@ -12,31 +14,38 @@ h1 {
     margin: 0px;
     padding: 20px;
 }
+
 h2 {
     display: inline-block;
     margin-right: 2px;
 }
+
 body {
     margin: 0px;
 }
+
 #grid ul {
     width: 100px;
     margin: 0px;
     margin-left: 10px;
     padding: 10px 20px;
 }
+
 #grid {
     display: grid;
     grid-template-columns: 150px 1fr;
 }
+
 #content {
     border-left: 1px gray solid;
     padding: 0px 30px;
 }
+
 #button {
     margin-top: 10px;
     margin-left: 10px;
 }
+
 /* @media(max-width: 700px) {
     #grid {
         display: block;
