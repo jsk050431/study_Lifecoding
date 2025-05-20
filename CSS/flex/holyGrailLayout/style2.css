@@ -1,0 +1,50 @@
+body {
+    color: white;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+}
+
+.ads {
+    display: flex;
+    flex-direction: row;
+    border-left: 1px solid gray;
+    align-items: center;
+    justify-content: center;
+}
+
+nav,
+.ads {
+    flex-basis: 120px;
+    flex-shrink: 0;
+}
+
+header {
+    border-bottom: 1px solid gray;
+    padding-left: 10px;
+}
+
+nav {
+    border-right: 1px solid gray;
+}
+
+nav ul {
+    padding-left: 30px;
+}
+
+main {
+    padding: 10px;
+}
+
+footer {
+    border-top: 1px solid gray;
+    padding-top: 10px;
+    text-align: center;
+}
