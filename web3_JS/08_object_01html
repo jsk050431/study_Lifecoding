@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+
+        let object = {
+            first : "one",
+            second : "two",
+        };
+
+        document.write(object.first + "<br>");
+        document.write(object.second + "<br>");
+        document.write("<br>");
+        
+        object.third = "three";
+        document.write(object.third + "<br>");
+        document.write("<br>");
+        
+        for (let key in object) {
+            document.write(key + "<br>");
+        }
+        document.write("<br>");
+        for (let key in object) {
+            document.write(object[key] + "<br>");
+        }
+        document.write("<br>");
+        for (let key in object) {
+            document.write(key + " : " + object[key] + "<br>");
+        }
+        document.write("<br>");
+        
+        object.showAll = function() {
+            for (let key in object) {
+                document.write(key + " : " + this[key] + "<br>");
+            }
+        }
+        object.showAll();
+        
+    </script>
+</body>
+</html>
