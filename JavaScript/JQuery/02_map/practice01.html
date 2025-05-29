@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jQuery map 연습</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>과일 목록 🍎🍌🍒</h1>
+
+  <ul id="fruits">
+    <li data-price="1000">Apple</li>
+    <li data-price="1500">Banana</li>
+    <li data-price="2000">Cherry</li>
+    <!-- 더 추가해도 좋아 -->
+  </ul>
+
+  <script>
+    // TODO: 과일 이름만 배열로 추출해서 변수에 저장
+    let fruitName = $('#fruits li').map((index, element) => {
+        return $(element).text();
+    }).get();
+    console.log(fruitName);
+
+    // TODO: data-price 값만 숫자 배열로 추출
+    let fruitPrice = $('#fruits li').map((index, element) => {
+        return $(element).data('price');
+    }).get();
+    console.log(fruitPrice);
+
+    // TODO: 가격이 1500 이상인 과일 가격만 추출 (filter 역할)
+    let fruitFiltered = $.map(fruitPrice, (value, index) => {
+        return value>=1500 ? value : null;
+    });
+    console.log(fruitFiltered);
+
+    let fruitFiltered2 = $(fruitPrice).map((index, element) => {
+        return element>= 1500 ? element : null;
+    }).get();
+    console.log(fruitFiltered2);
+  </script>
+</body>
+</html>

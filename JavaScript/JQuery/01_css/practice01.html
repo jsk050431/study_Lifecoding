@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>jQuery CSS 실습</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      margin: 20px auto;
+      text-align: center;
+      line-height: 200px;
+      font-size: 20px;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    button {
+      display: block;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="box">변화 줄 박스</div>
+  <button id="btn1">[미션1] 배경색 바꾸기</button>
+  <button id="btn2">[미션2] 크기 바꾸기</button>
+  <button id="btn3">[미션3] 글자색과 크기 바꾸기</button>
+
+  <script>
+    // 이 아래에 미션에 따라 코드를 작성해봐!
+    
+    // 예시로 미션1의 힌트만 줄게:
+    $('#btn1').click(function () {
+      $('#box').css('background-color', 'hotpink');
+    });
+
+    $('#btn2').click(() => {
+        $('#box').css({'width': '300px', 'height': '300px'});
+    });
+
+    $('#btn3').click(() => {
+        $('#box').css({'color': 'yellow', 'font-size': "30px"});
+    });
+  </script>
+
+</body>
+</html>
