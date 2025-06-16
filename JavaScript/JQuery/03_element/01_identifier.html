@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <ul>
+      <li>html</li>
+      <li>css</li>
+      <li id="active" class="important current">javascript</li>
+    </ul>
+
+    <script>
+      let li = document.getElementById("active");
+      console.log(li.tagName);
+
+      console.log(li.id);
+      li.id = "inactive";
+      console.log(li.id);
+
+      console.log(li.className);
+      li.className = "important";
+      console.log(li.className);
+
+      console.log(li.classList);
+      li.classList.add("current");
+      console.log(li.classList);
+    </script>
+  </body>
+</html>

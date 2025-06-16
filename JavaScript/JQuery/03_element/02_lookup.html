@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <ul>
+      <li class="marked">html</li>
+      <li>css</li>
+      <li id="active">
+        javascript
+        <ul>
+          <li class="marked">DOM</li>
+          <li class="marked">BOM</li>
+        </ul>
+      </li>
+    </ul>
+
+    <script>
+      let list = document.getElementsByClassName("marked");
+      console.group("document");
+      for (let i of list) {
+        console.log(i.textContent);
+      }
+      console.groupEnd();
+
+      let active = document.getElementById("active");
+      let list2 = active.getElementsByClassName("marked");
+      console.group();
+      for (let i of list2) {
+        console.log(i.textContent);
+      }
+      console.groupEnd();
+    </script>
+  </body>
+</html>
