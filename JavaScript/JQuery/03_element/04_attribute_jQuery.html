@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <a id="target" href="https://google.com">google.com</a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      let t = $("#target");
+
+      console.log(t.attr("href"));
+
+      t.attr("href", "https://naver.com");
+      t.text("naver.com");
+      console.log(t.attr("href"));
+
+      t.attr("title", "link");
+      console.log(t.attr("title"));
+
+      t.removeAttr("title");
+      console.log(t.attr("title"));
+
+      t.attr("target", "blank");
+    </script>
+  </body>
+</html>

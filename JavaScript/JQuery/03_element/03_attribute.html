@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <a id="target" href="https://google.com">google.com</a>
+
+    <script>
+      let t = document.getElementById("target");
+
+      console.log(t.getAttribute("href"));
+
+      t.setAttribute("href", "https://naver.com");
+      t.textContent = "naver.com";
+      console.log(t.getAttribute("href"));
+
+      t.setAttribute("title", "link");
+      console.log(t.hasAttribute("title"));
+      console.log(t.getAttribute("title"));
+
+      t.removeAttribute("title");
+      console.log(t.hasAttribute("title"));
+      console.log(t.getAttribute("title"));
+
+      t.setAttribute("target", "blank");
+    </script>
+  </body>
+</html>

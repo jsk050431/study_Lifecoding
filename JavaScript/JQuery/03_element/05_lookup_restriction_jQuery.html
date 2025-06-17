@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <ul>
+      <li class="marked">html</li>
+      <li>css</li>
+      <li id="active">
+        javascript
+        <ul>
+          <li class="marked">DOM</li>
+          <li class="marked">BOM</li>
+        </ul>
+      </li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // $(".marked", "#active").css('color', 'red');
+      // $("#active .marked").css('color', 'red');
+      // $('#active').find('.marked').css('color', 'red');
+
+      $("#active")
+        .css("color", "red")
+        .find(".marked")
+        .css("backgroundColor", "blue");
+    </script>
+  </body>
+</html>
