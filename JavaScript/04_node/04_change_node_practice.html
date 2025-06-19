@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <ul id="target">
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+    <input id="textinput" type="text" />
+    <input type="button" onclick="callAppendChild();" value="Create" />
+    <br />
+    <input
+      id="delete"
+      type="button"
+      onclick="callDeleteChild()"
+      value="Delete"
+    />
+
+    <script>
+      function callAppendChild() {
+        let target = document.getElementById("target");
+        let input = document.getElementById("textinput");
+        let newchild = document.createElement("li");
+        newchild.appendChild(document.createTextNode(input.value));
+        target.appendChild(newchild);
+        input.value = "";
+      }
+
+      function callDeleteChild() {
+        let target = document.getElementById("target");
+        target.removeChild(target.lastElementChild);
+      }
+    </script>
+  </body>
+</html>

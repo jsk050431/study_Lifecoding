@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <ul id="start">
+      <li>one</li>
+      <li>two</li>
+      <li><a href="https://google.com">google.com</a></li>
+      <li>
+        three
+        <ul>
+          <li>four</li>
+          <li>five</li>
+          <li><a href="https://naver.com">naver.com</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <script>
+        /*
+        Node.nodeType
+        node의 타입을 의미한다. 
+
+        Node.nodeName
+        node의 이름 (태그명을 의미한다.)
+        */
+
+      function traverse(target, callback) {
+        if (target.nodeType === 1 /* Node.ELEMENT_NODE */) {
+          callback(target);
+          let child = target.childNodes;
+          for (let i of child) {
+            traverse(i, callback);
+          }
+        }
+      }
+
+      traverse(document.getElementById("start"), function (elem) {
+        if (elem.nodeName === "A") {
+          elem.style.color = "hotpink";
+        } else {
+          elem.style.color = "blue";
+        }
+      });
+    </script>
+  </body>
+</html>

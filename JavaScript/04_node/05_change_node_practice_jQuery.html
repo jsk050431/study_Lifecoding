@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <ul id="target">
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+    <input id="textinput" type="text" />
+    <input type="button" onclick="callAppendChild();" value="Create" />
+    <br />
+    <input
+      id="delete"
+      type="button"
+      onclick="callDeleteChild()"
+      value="Delete"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      function callAppendChild() {
+        input = $("#textinput");
+        $("#target").append($("<li>").text(input.val()));
+        input.val("");
+      }
+
+      function callDeleteChild() {
+          $("#target li:last-child").remove();
+      }
+    </script>
+  </body>
+</html>

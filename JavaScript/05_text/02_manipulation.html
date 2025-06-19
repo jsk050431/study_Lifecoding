@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <p id="target">hello wolrd</p>
+    <p>value <input type="text" id="value" /></p>
+    <p>start <input type="text" id="start" /></p>
+    <p>end <input type="text" id="end" /></p>
+    <input
+      type="button"
+      value="appendData (value)"
+      onclick="callAppendData()"
+    />
+    <input
+      type="button"
+      value="deleteData (start,end)"
+      onclick="callDeleteData()"
+    />
+    <input
+      type="button"
+      value="insertData (value, start)"
+      onclick="callInsertData()"
+    />
+    <input
+      type="button"
+      value="replaceData(value, start, end)"
+      onclick="callReplaceData()"
+    />
+    <input
+      type="button"
+      value="substringData(start, end)"
+      onclick="callSubstringData()"
+    />
+
+    <script>
+      let target = document.getElementById("target").firstChild;
+      let value = document.getElementById("value");
+      let start = document.getElementById("start");
+      let end = document.getElementById("end");
+      
+      function callAppendData() {
+        target.appendData(value.value);
+      }
+      function callDeleteData() {
+        target.deleteData(start.value, end.value);
+      }
+      function callInsertData() {
+        target.insertData(start.value, value.value);
+      }
+      function callReplaceData() {
+        target.replaceData(start.value, end.value, value.value);
+      }
+      function callSubstringData() {
+        alert(target.substringData(start.value, end.value));
+      }
+    </script>
+  </body>
+</html>
