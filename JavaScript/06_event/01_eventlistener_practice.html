@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>addEventListener 연습</title>
+  </head>
+  <body>
+    <h1>이벤트 리스너 실습</h1>
+
+    <input type="button" id="btn1" value="버튼 1" />
+    <input type="button" id="btn2" value="버튼 2" />
+    <input type="button" id="btn3" value="버튼 3" />
+
+    <script>
+      let btn1 = document.getElementById("btn1");
+      let btn2 = document.getElementById("btn2");
+      let btn3 = document.getElementById("btn3");
+      let arr_btn = [btn1, btn2, btn3];
+
+      // 1번
+      btn1.addEventListener("click", () => {
+        alert("버튼 1을 클릭했습니다");
+      });
+
+      // 2번
+      btn2.addEventListener("click", () => {
+        alert("첫 번째 알림");
+      });
+      btn2.addEventListener("click", () => {
+        alert("두 번째 알림");
+      });
+
+      // 3번
+      function btnName(event) {
+        alert(`당신은 ${event.target.value}을 클릭했습니다`);
+      }
+      arr_btn.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          btnName(event);
+        });
+      });
+
+      // 4번
+      function btn_handler(event) {
+        switch (event.target.id) {
+          case "btn1":
+            alert("첫 번째 버튼!");
+            break;
+          case "btn2":
+            alert("두 번째 버튼!");
+            break;
+          case "btn3":
+            alert("세 번째 버튼!");
+            break;
+        }
+        event.target.style.backgroundColor = "yellow";
+      }
+      arr_btn.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          btn_handler(event);
+        });
+      });
+    </script>
+  </body>
+</html>
