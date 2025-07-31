@@ -14,9 +14,8 @@ let app = http.createServer(function (request, response) {
     }
     response.writeHead(200);
 
-    let template;
     fs.readFile(`data/${queryData.id}.txt`, "utf-8", (err, description) => {
-        template = `
+        let template = `
       <!doctype html>
       <html>
       <head>

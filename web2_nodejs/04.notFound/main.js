@@ -7,10 +7,9 @@ let app = http.createServer(function (request, response) {
     let queryData = url.parse(_url, true).query;
     let pathName = url.parse(_url, true).pathname;
     let title = queryData.id;
-    let template;
     if (pathName === "/") {
         fs.readFile(`data/${queryData.id}.txt`, "utf-8", (err, description) => {
-            template = `
+            let template = `
         <!doctype html>
         <html>
         <head>
