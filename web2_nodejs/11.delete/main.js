@@ -12,8 +12,8 @@ function displayHTML(title, contentsList, description, fileList) {
         actions = `<a href="/create">create</a>
                     <a href="/update?id=${contentTitle}">update</a>
                     <form action="/delete_process" method="post">
-                        <input type="hidden" name="id" value="${contentTitle}" />
-                        <input type="submit" value="delete" />
+                        <input type="hidden" name="id" value="${contentTitle}"/>
+                        <input type="submit" value="delete"/>
                     </form>`;
     } else {
         actions = `<a href="/create">create</a>`;
@@ -87,7 +87,7 @@ let app = http.createServer(async function (request, response) {
         description = `<form action="http://localhost:3000/create_process" method="post">
         <p><input type="text" name="title" placeholder="title"/></p>
         <p><textarea name="description", placeholder="description"></textarea></p>
-        <p><input type="submit" /></p>
+        <p><input type="submit"/></p>
         </form>`;
         displayContent(title, description, response);
     } else if (pathName === "/create_process") {
@@ -111,10 +111,10 @@ let app = http.createServer(async function (request, response) {
         const _title = queryData.id;
         const _description = fs.readFileSync(`data/${_title}`, "utf-8");
         description = `<form action="http://localhost:3000/update_process" method="post">
-                        <p><input type="hidden" name="id" value="${_title}" /></p>
-                        <p><input type="text" name="title" value="${_title}" /></p>
+                        <p><input type="hidden" name="id" value="${_title}"/></p>
+                        <p><input type="text" name="title" value="${_title}"/></p>
                         <p><textarea name="description">${_description}</textarea></p>
-                        <p><input type="submit" /></p>
+                        <p><input type="submit"/></p>
                         </form>`;
         displayContent(title, description, response);
     } else if (pathName === "/update_process") {
